@@ -30,7 +30,7 @@
             background-color: white;
             border-radius: 10px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-            padding: 30px;
+            padding: 40px;
         }
         
         header {
@@ -47,11 +47,12 @@
         h1 {
             color: #2c3e50;
             margin-bottom: 10px;
+            font-size: 2.5rem;
         }
         
         .tagline {
             color: #7f8c8d;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             margin-bottom: 20px;
             text-align: center;
         }
@@ -66,45 +67,49 @@
         
         .info-item {
             background-color: #f8f9fa;
-            padding: 8px 15px;
+            padding: 10px 20px;
             border-radius: 20px;
-            font-size: 0.9rem;
+            font-size: 1rem;
             color: #495057;
             border: 1px solid #e9ecef;
         }
         
         section {
-            margin-bottom: 30px;
+            margin-bottom: 40px;
         }
         
         h2 {
             color: #2c3e50;
-            margin-bottom: 15px;
-            padding-bottom: 8px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
             border-bottom: 2px solid #eaeaea;
+            font-size: 1.8rem;
         }
         
         p {
             margin-bottom: 15px;
             text-align: justify;
+            font-size: 1.1rem;
+            line-height: 1.8;
         }
         
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 15px;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 20px;
         }
         
         .skill-category {
             background-color: #f8f9fa;
-            padding: 15px;
+            padding: 20px;
             border-radius: 8px;
             border-left: 4px solid #3498db;
         }
         
         .skill-category h3 {
-            margin-bottom: 10px;
+            margin-bottom: 15px;
             color: #2c3e50;
+            font-size: 1.3rem;
         }
         
         .skill-list {
@@ -112,9 +117,10 @@
         }
         
         .skill-list li {
-            margin-bottom: 5px;
+            margin-bottom: 8px;
             padding-left: 15px;
             position: relative;
+            font-size: 1.1rem;
         }
         
         .skill-list li:before {
@@ -122,42 +128,42 @@
             color: #3498db;
             position: absolute;
             left: 0;
+            font-weight: bold;
         }
         
         .project-highlight {
             background-color: #f8f9fa;
-            padding: 20px;
+            padding: 25px;
             border-radius: 8px;
             border-left: 4px solid #e74c3c;
         }
         
         .project-highlight h3 {
-            margin-bottom: 10px;
+            margin-bottom: 15px;
             color: #2c3e50;
+            font-size: 1.4rem;
         }
         
         .project-link {
             display: inline-block;
-            margin-top: 10px;
+            margin-top: 15px;
             color: #3498db;
             text-decoration: none;
             font-weight: bold;
-        }
-        
-        .project-link:hover {
-            text-decoration: underline;
+            font-size: 1.1rem;
         }
         
         .learning-journey {
             background-color: #f8f9fa;
-            padding: 20px;
+            padding: 25px;
             border-radius: 8px;
             border-left: 4px solid #2ecc71;
         }
         
         .learning-journey h3 {
-            margin-bottom: 10px;
+            margin-bottom: 15px;
             color: #2c3e50;
+            font-size: 1.4rem;
         }
         
         .learning-list {
@@ -165,9 +171,10 @@
         }
         
         .learning-list li {
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             padding-left: 20px;
             position: relative;
+            font-size: 1.1rem;
         }
         
         .learning-list li:before {
@@ -175,21 +182,22 @@
             color: #2ecc71;
             position: absolute;
             left: 0;
+            font-weight: bold;
         }
         
         .contact-info {
             display: flex;
             flex-wrap: wrap;
-            gap: 15px;
-            margin-top: 15px;
+            gap: 20px;
+            margin-top: 20px;
             justify-content: center;
         }
         
         .contact-item {
             background-color: #f8f9fa;
-            padding: 10px 15px;
+            padding: 15px 20px;
             border-radius: 5px;
-            font-size: 0.9rem;
+            font-size: 1.1rem;
         }
         
         .contact-link {
@@ -197,14 +205,10 @@
             text-decoration: none;
         }
         
-        .contact-link:hover {
-            text-decoration: underline;
-        }
-        
         .action-button {
             display: block;
-            width: 200px;
-            padding: 12px 20px;
+            width: 220px;
+            padding: 15px 25px;
             color: white;
             text-align: center;
             text-decoration: none;
@@ -214,6 +218,7 @@
             border: none;
             cursor: pointer;
             margin: 0 auto;
+            font-size: 1.1rem;
         }
         
         .showcase-button {
@@ -240,11 +245,12 @@
         
         footer {
             text-align: center;
-            margin-top: 30px;
+            margin-top: 40px;
             padding-top: 20px;
             border-top: 1px solid #eee;
             color: #7f8c8d;
             font-style: italic;
+            font-size: 1.1rem;
         }
         
         @media (max-width: 768px) {
@@ -258,11 +264,6 @@
         }
 
         /* Estilos para garantir melhor conversão para PDF */
-        .pdf-optimized {
-            page-break-inside: avoid;
-        }
-        
-        /* Estilos específicos para o PDF */
         @media print {
             body {
                 background: white !important;
@@ -275,8 +276,12 @@
                 margin: 0 !important;
                 padding: 20px !important;
                 max-width: 100% !important;
+                width: 100% !important;
             }
             .no-print {
+                display: none !important;
+            }
+            .action-button {
                 display: none !important;
             }
         }
@@ -286,7 +291,7 @@
 </head>
 <body>
     <div class="container" id="resume-content">
-        <header class="pdf-optimized">
+        <header>
             <h1>Artur Everton (art2324)</h1>
             <p class="tagline">⭐ Always curious. Always building. Always learning.</p>
             
@@ -300,13 +305,13 @@
 
         <a href="https://github.com/art2324/learning-journey" class="action-button showcase-button no-print" target="_blank">Showcase</a>
         
-        <section class="pdf-optimized">
+        <section>
             <h2>About Me</h2>
             <p>I am a Computer Science student passionate about Artificial Intelligence, Data Science, and Secure Systems. Currently, I work alongside my father building compliance-oriented AI platforms, integrating DevSecOps practices with AI Governance frameworks such as ISO/IEC 42001 and the EU AI Act.</p>
             <p>I enjoy turning theory into real-world solutions, from coding ML pipelines to experimenting with Computer Vision and LLMs.</p>
         </section>
         
-        <section class="pdf-optimized">
+        <section>
             <h2>Skills & Interests</h2>
             <div class="skills-grid">
                 <div class="skill-category">
@@ -349,7 +354,7 @@
             </div>
         </section>
         
-        <section class="pdf-optimized">
+        <section>
             <h2>Featured Project</h2>
             <div class="project-highlight">
                 <h3>🛡 AI Governance and Compliance Platform</h3>
@@ -364,7 +369,7 @@
             </div>
         </section>
         
-        <section class="pdf-optimized">
+        <section>
             <h2>Current Learning Journey</h2>
             <div class="learning-journey">
                 <ul class="learning-list">
@@ -375,7 +380,7 @@
             </div>
         </section>
         
-        <section class="pdf-optimized">
+        <section>
             <h2>Let's Connect</h2>
             <div class="contact-info">
                 <div class="contact-item">GitHub: <a href="https://github.com/art2324" class="contact-link">@art2324</a></div>
@@ -386,7 +391,7 @@
 
         <button class="action-button pdf-button no-print" onclick="generatePDF()">Download as PDF</button>
         
-        <footer class="pdf-optimized">
+        <footer>
             <p>⭐ Always curious. Always building. Always learning.</p>
         </footer>
     </div>
@@ -396,66 +401,35 @@
             const element = document.getElementById('resume-content');
             const button = event.target;
             
-            // Create a clean copy for PDF generation
-            const elementCopy = element.cloneNode(true);
-            
-            // Remove buttons from the copy
-            const buttons = elementCopy.querySelectorAll('.no-print');
-            buttons.forEach(button => button.remove());
-            
-            // Remove target="_blank" from links for PDF
-            const links = elementCopy.querySelectorAll('a');
-            links.forEach(link => {
-                link.removeAttribute('target');
-                link.removeAttribute('onclick');
-                // Add underline to links for better visibility in PDF
-                link.style.textDecoration = 'underline';
-                link.style.color = '#3498db';
-            });
-            
             // Show loading indicator
             const originalText = button.textContent;
             button.textContent = 'Generating PDF...';
             button.disabled = true;
             
-            // Optimized PDF settings for better centering and formatting
+            // Simple and direct PDF configuration
             const options = {
-                margin: [15, 15, 15, 15],
+                margin: 10,
                 filename: 'Artur_Everton_Resume.pdf',
                 image: { 
                     type: 'jpeg', 
-                    quality: 0.98 
+                    quality: 1 
                 },
                 html2canvas: { 
                     scale: 2,
                     useCORS: true,
-                    scrollY: 0,
-                    width: 900,
-                    windowWidth: 900,
-                    onclone: function(clonedDoc) {
-                        // Ensure proper styling in the cloned document
-                        const clonedContainer = clonedDoc.getElementById('resume-content');
-                        if (clonedContainer) {
-                            clonedContainer.style.margin = '0 auto';
-                            clonedContainer.style.width = '100%';
-                            clonedContainer.style.maxWidth = '900px';
-                        }
-                    }
+                    logging: false,
+                    width: element.scrollWidth,
+                    height: element.scrollHeight
                 },
                 jsPDF: { 
                     unit: 'mm', 
                     format: 'a4', 
-                    orientation: 'portrait',
-                    compress: true
-                },
-                pagebreak: { 
-                    mode: ['avoid-all', 'css', 'legacy'],
-                    before: '.pdf-optimized'
+                    orientation: 'portrait'
                 }
             };
             
-            // Generate PDF with better error handling
-            html2pdf().set(options).from(elementCopy).save().then(() => {
+            // Generate PDF directly without cloning
+            html2pdf().set(options).from(element).save().then(() => {
                 // Restore button text
                 button.textContent = originalText;
                 button.disabled = false;

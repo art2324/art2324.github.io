@@ -229,6 +229,10 @@
             background-color: #c0392b;
         }
         
+        .no-print {
+            /* Esta classe será usada para elementos que não devem aparecer no PDF */
+        }
+        
         footer {
             text-align: center;
             margin-top: 30px;
@@ -245,6 +249,16 @@
             
             .skills-grid {
                 grid-template-columns: 1fr;
+            }
+        }
+
+        /* Estilos específicos para impressão/PDF */
+        @media print {
+            .no-print {
+                display: none !important;
+            }
+            .action-button {
+                display: none !important;
             }
         }
     </style>
@@ -265,7 +279,7 @@
             </div>
         </header>
 
-        <a href="https://github.com/art2324/learning-journey" class="action-button showcase-button" target="_blank">Showcase</a>
+        <a href="https://github.com/art2324/learning-journey" class="action-button showcase-button no-print" target="_blank">Showcase</a>
         
         <section>
             <h2>About Me</h2>
@@ -351,7 +365,7 @@
             </div>
         </section>
 
-        <button class="action-button pdf-button" onclick="generatePDF()">Download as PDF</button>
+        <button class="action-button pdf-button no-print" onclick="generatePDF()">Download as PDF</button>
         
         <footer>
             <p>⭐ Always curious. Always building. Always learning.</p>
@@ -362,17 +376,32 @@
         function generatePDF() {
             const element = document.getElementById('resume-content');
             
+            // Clone the element to avoid modifying the original
+            const clonedElement = element.cloneNode(true);
+            
+            // Remove buttons from the cloned element
+            const buttons = clonedElement.querySelectorAll('.no-print');
+            buttons.forEach(button => button.remove());
+            
             // PDF options
             const options = {
                 margin: 10,
                 filename: 'Artur_Everton_Resume.pdf',
                 image: { type: 'jpeg', quality: 0.98 },
-                html2canvas: { scale: 2 },
-                jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+                html2canvas: { 
+                    scale: 2,
+                    useCORS: true,
+                    logging: true
+                },
+                jsPDF: { 
+                    unit: 'mm', 
+                    format: 'a4', 
+                    orientation: 'portrait' 
+                }
             };
             
-            // Generate PDF
-            html2pdf().set(options).from(element).save();
+            // Generate PDF from the cleaned element
+            html2pdf().set(options).from(clonedElement).save();
         }
     </script>
 </body>

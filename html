@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artur Everton - Resumo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+        }
+        
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        
+        .tagline {
+            color: #7f8c8d;
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+        
+        .profile-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        
+        .info-item {
+            background-color: #f8f9fa;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: #495057;
+            border: 1px solid #e9ecef;
+        }
+        
+        section {
+            margin-bottom: 30px;
+        }
+        
+        h2 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #eaeaea;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+        }
+        
+        .skill-category {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #3498db;
+        }
+        
+        .skill-category h3 {
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+        
+        .skill-list {
+            list-style-type: none;
+        }
+        
+        .skill-list li {
+            margin-bottom: 5px;
+            padding-left: 15px;
+            position: relative;
+        }
+        
+        .skill-list li:before {
+            content: "•";
+            color: #3498db;
+            position: absolute;
+            left: 0;
+        }
+        
+        .project-highlight {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #e74c3c;
+        }
+        
+        .project-highlight h3 {
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+        
+        .project-link {
+            display: inline-block;
+            margin-top: 10px;
+            color: #3498db;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .project-link:hover {
+            text-decoration: underline;
+        }
+        
+        .learning-journey {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #2ecc71;
+        }
+        
+        .learning-journey h3 {
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+        
+        .learning-list {
+            list-style-type: none;
+        }
+        
+        .learning-list li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .learning-list li:before {
+            content: "→";
+            color: #2ecc71;
+            position: absolute;
+            left: 0;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .contact-item {
+            background-color: #f8f9fa;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-size: 0.9rem;
+        }
+        
+        .demo-button {
+            display: block;
+            width: 200px;
+            margin: 30px auto;
+            padding: 12px 20px;
+            background-color: #3498db;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        
+        .demo-button:hover {
+            background-color: #2980b9;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            color: #7f8c8d;
+            font-style: italic;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Artur Everton (art2324)</h1>
+            <p class="tagline">⭐ Always curious. Always building. Always learning.</p>
+            
+            <div class="profile-info">
+                <div class="info-item">🎓 Computer Science Student @ University of the People</div>
+                <div class="info-item">📊 Data Science & AI Labs @ WorldQuant University</div>
+                <div class="info-item">🤖 AI Enthusiast — ML, LLMs, and Computer Vision</div>
+                <div class="info-item">🛡 Hands-on Contributor in AI Governance & DevSecOps</div>
+            </div>
+        </header>
+        
+        <section>
+            <h2>Sobre Mim</h2>
+            <p>Sou estudante de Ciência da Computação apaixonado por Inteligência Artificial, Ciência de Dados e Sistemas Seguros. Atualmente, trabalho junto com meu pai na construção de plataformas de IA orientadas à conformidade, integrando práticas de DevSecOps com estruturas de Governança de IA, como ISO/IEC 42001 e o AI Act da UE.</p>
+            <p>Gosto de transformar teoria em soluções do mundo real, desde a codificação de pipelines de ML até a experimentação com Visão Computacional e LLMs.</p>
+        </section>
+        
+        <section>
+            <h2>Habilidades & Interesses</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Programação</h3>
+                    <ul class="skill-list">
+                        <li>Python</li>
+                        <li>JavaScript</li>
+                        <li>SQL</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>IA & Data Science</h3>
+                    <ul class="skill-list">
+                        <li>Pandas, NumPy</li>
+                        <li>Scikit-learn</li>
+                        <li>TensorFlow (básico)</li>
+                        <li>Visão Computacional</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>DevSecOps & Governança</h3>
+                    <ul class="skill-list">
+                        <li>Pipelines de segurança</li>
+                        <li>Gerenciamento de riscos</li>
+                        <li>Conformidade de IA</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Ferramentas</h3>
+                    <ul class="skill-list">
+                        <li>Git & GitHub</li>
+                        <li>Docker</li>
+                        <li>Jupyter Notebook</li>
+                        <li>Streamlit</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <section>
+            <h2>Projeto em Destaque</h2>
+            <div class="project-highlight">
+                <h3>🛡 Plataforma de Governança e Conformidade de IA</h3>
+                <p>Desenvolvedor contribuinte em um projeto do mundo real que oferece:</p>
+                <ul class="skill-list">
+                    <li>Gerenciamento automatizado de riscos para pipelines de IA/ML</li>
+                    <li>Verificações de segurança DevSecOps integradas ao CI/CD</li>
+                    <li>Governança por design: explicabilidade, auditabilidade e conformidade com ISO/IEC 42001, AI Act e GDPR/LGPD</li>
+                    <li>Módulos para segurança, monitoramento e avaliação de LLM</li>
+                </ul>
+                <a href="#" class="project-link">📌 Ver repositório do projeto aqui</a>
+            </div>
+        </section>
+        
+        <section>
+            <h2>Jornada de Aprendizado Atual</h2>
+            <div class="learning-journey">
+                <ul class="learning-list">
+                    <li>University of the People → Ciência da Computação</li>
+                    <li>WorldQuant University → Applied Data Science Lab & Applied AI Lab (Visão Computacional)</li>
+                    <li>Autoaprendizado → LLMs, Implantação segura de IA, Ambientes em nuvem</li>
+                </ul>
+            </div>
+        </section>
+        
+        <section>
+            <h2>Vamos Conectar</h2>
+            <div class="contact-info">
+                <div class="contact-item">GitHub: @art2324</div>
+                <div class="contact-item">LinkedIn: (a ser adicionado)</div>
+                <div class="contact-item">Email: (a ser adicionado)</div>
+            </div>
+        </section>
+        
+        <a href="https://github.com/art2324/learning-journey" class="demo-button" target="_blank">Demonstrações</a>
+        
+        <footer>
+            <p>⭐ Always curious. Always building. Always learning.</p>
+        </footer>
+    </div>
+</body>
+</html>

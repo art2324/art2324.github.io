@@ -240,7 +240,7 @@
         }
         
         .no-print {
-            /* Esta classe será usada para elementos que não devem aparecer no PDF */
+            /* Elementos que não devem aparecer na impressão */
         }
         
         footer {
@@ -263,7 +263,7 @@
             }
         }
 
-        /* Estilos para garantir melhor conversão para PDF */
+        /* Estilos para impressão */
         @media print {
             body {
                 background: white !important;
@@ -281,13 +281,8 @@
             .no-print {
                 display: none !important;
             }
-            .action-button {
-                display: none !important;
-            }
         }
     </style>
-    <!-- Include html2pdf library -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 </head>
 <body>
     <div class="container" id="resume-content">
@@ -389,7 +384,7 @@
             </div>
         </section>
 
-        <button class="action-button pdf-button no-print" onclick="generatePDF()">Download as PDF</button>
+        <button class="action-button pdf-button no-print" onclick="printResume()">Download as PDF</button>
         
         <footer>
             <p>⭐ Always curious. Always building. Always learning.</p>
@@ -397,48 +392,8 @@
     </div>
 
     <script>
-        function generatePDF() {
-            const element = document.getElementById('resume-content');
-            const button = event.target;
-            
-            // Show loading indicator
-            const originalText = button.textContent;
-            button.textContent = 'Generating PDF...';
-            button.disabled = true;
-            
-            // Simple and direct PDF configuration
-            const options = {
-                margin: 10,
-                filename: 'Artur_Everton_Resume.pdf',
-                image: { 
-                    type: 'jpeg', 
-                    quality: 1 
-                },
-                html2canvas: { 
-                    scale: 2,
-                    useCORS: true,
-                    logging: false,
-                    width: element.scrollWidth,
-                    height: element.scrollHeight
-                },
-                jsPDF: { 
-                    unit: 'mm', 
-                    format: 'a4', 
-                    orientation: 'portrait'
-                }
-            };
-            
-            // Generate PDF directly without cloning
-            html2pdf().set(options).from(element).save().then(() => {
-                // Restore button text
-                button.textContent = originalText;
-                button.disabled = false;
-            }).catch(error => {
-                console.error('PDF generation error:', error);
-                button.textContent = originalText;
-                button.disabled = false;
-                alert('Error generating PDF. Please try again.');
-            });
+        function printResume() {
+            window.print();
         }
     </script>
 </body>

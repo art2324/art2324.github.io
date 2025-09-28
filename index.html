@@ -196,22 +196,42 @@
             text-decoration: underline;
         }
         
-        .demo-button {
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 30px auto;
+            flex-wrap: wrap;
+        }
+        
+        .action-button {
             display: block;
             width: 200px;
-            margin: 30px auto;
             padding: 12px 20px;
-            background-color: #3498db;
             color: white;
             text-align: center;
             text-decoration: none;
             border-radius: 5px;
             font-weight: bold;
-            transition: background-color 0.3s;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
         }
         
-        .demo-button:hover {
+        .showcase-button {
+            background-color: #3498db;
+        }
+        
+        .showcase-button:hover {
             background-color: #2980b9;
+        }
+        
+        .pdf-button {
+            background-color: #e74c3c;
+        }
+        
+        .pdf-button:hover {
+            background-color: #c0392b;
         }
         
         footer {
@@ -231,11 +251,18 @@
             .skills-grid {
                 grid-template-columns: 1fr;
             }
+            
+            .button-container {
+                flex-direction: column;
+                align-items: center;
+            }
         }
     </style>
+    <!-- Include html2pdf library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 </head>
 <body>
-    <div class="container">
+    <div class="container" id="resume-content">
         <header>
             <h1>Artur Everton (art2324)</h1>
             <p class="tagline">⭐ Always curious. Always building. Always learning.</p>
@@ -332,11 +359,32 @@
             </div>
         </section>
         
-        <a href="https://github.com/art2324/learning-journey" class="demo-button" target="_blank">Showcase</a>
+        <div class="button-container">
+            <a href="https://github.com/art2324/learning-journey" class="action-button showcase-button" target="_blank">Showcase</a>
+            <button class="action-button pdf-button" onclick="generatePDF()">Download as PDF</button>
+        </div>
         
         <footer>
             <p>⭐ Always curious. Always building. Always learning.</p>
         </footer>
     </div>
+
+    <script>
+        function generatePDF() {
+            const element = document.getElementById('resume-content');
+            
+            // PDF options
+            const options = {
+                margin: 10,
+                filename: 'Artur_Everton_Resume.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 2 },
+                jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+            };
+            
+            // Generate PDF
+            html2pdf().set(options).from(element).save();
+        }
+    </script>
 </body>
 </html>

@@ -17,10 +17,15 @@
             color: #333;
             line-height: 1.6;
             padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
         }
         
         .container {
             max-width: 900px;
+            width: 100%;
             margin: 0 auto;
             background-color: white;
             border-radius: 10px;
@@ -256,6 +261,25 @@
         .pdf-optimized {
             page-break-inside: avoid;
         }
+        
+        /* Estilos específicos para o PDF */
+        @media print {
+            body {
+                background: white !important;
+                padding: 0 !important;
+                margin: 0 !important;
+            }
+            .container {
+                box-shadow: none !important;
+                border-radius: 0 !important;
+                margin: 0 !important;
+                padding: 20px !important;
+                max-width: 100% !important;
+            }
+            .no-print {
+                display: none !important;
+            }
+        }
     </style>
     <!-- Include html2pdf library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
@@ -370,6 +394,7 @@
     <script>
         function generatePDF() {
             const element = document.getElementById('resume-content');
+            const button = event.target;
             
             // Create a clean copy for PDF generation
             const elementCopy = element.cloneNode(true);
@@ -383,11 +408,19 @@
             links.forEach(link => {
                 link.removeAttribute('target');
                 link.removeAttribute('onclick');
+                // Add underline to links for better visibility in PDF
+                link.style.textDecoration = 'underline';
+                link.style.color = '#3498db';
             });
             
-            // Optimize PDF settings
+            // Show loading indicator
+            const originalText = button.textContent;
+            button.textContent = 'Generating PDF...';
+            button.disabled = true;
+            
+            // Optimized PDF settings for better centering and formatting
             const options = {
-                margin: [10, 10, 10, 10],
+                margin: [15, 15, 15, 15],
                 filename: 'Artur_Everton_Resume.pdf',
                 image: { 
                     type: 'jpeg', 
@@ -397,29 +430,40 @@
                     scale: 2,
                     useCORS: true,
                     scrollY: 0,
-                    windowWidth: element.scrollWidth,
-                    windowHeight: element.scrollHeight
+                    width: 900,
+                    windowWidth: 900,
+                    onclone: function(clonedDoc) {
+                        // Ensure proper styling in the cloned document
+                        const clonedContainer = clonedDoc.getElementById('resume-content');
+                        if (clonedContainer) {
+                            clonedContainer.style.margin = '0 auto';
+                            clonedContainer.style.width = '100%';
+                            clonedContainer.style.maxWidth = '900px';
+                        }
+                    }
                 },
                 jsPDF: { 
                     unit: 'mm', 
                     format: 'a4', 
-                    orientation: 'portrait' 
+                    orientation: 'portrait',
+                    compress: true
                 },
                 pagebreak: { 
-                    mode: ['avoid-all', 'css', 'legacy'] 
+                    mode: ['avoid-all', 'css', 'legacy'],
+                    before: '.pdf-optimized'
                 }
             };
             
-            // Show loading indicator
-            const originalText = event.target.textContent;
-            event.target.textContent = 'Generating PDF...';
-            event.target.disabled = true;
-            
-            // Generate PDF
+            // Generate PDF with better error handling
             html2pdf().set(options).from(elementCopy).save().then(() => {
                 // Restore button text
-                event.target.textContent = originalText;
-                event.target.disabled = false;
+                button.textContent = originalText;
+                button.disabled = false;
+            }).catch(error => {
+                console.error('PDF generation error:', error);
+                button.textContent = originalText;
+                button.disabled = false;
+                alert('Error generating PDF. Please try again.');
             });
         }
     </script>

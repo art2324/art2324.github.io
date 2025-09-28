@@ -252,14 +252,9 @@
             }
         }
 
-        /* Estilos específicos para impressão/PDF */
-        @media print {
-            .no-print {
-                display: none !important;
-            }
-            .action-button {
-                display: none !important;
-            }
+        /* Estilos para garantir melhor conversão para PDF */
+        .pdf-optimized {
+            page-break-inside: avoid;
         }
     </style>
     <!-- Include html2pdf library -->
@@ -267,7 +262,7 @@
 </head>
 <body>
     <div class="container" id="resume-content">
-        <header>
+        <header class="pdf-optimized">
             <h1>Artur Everton (art2324)</h1>
             <p class="tagline">⭐ Always curious. Always building. Always learning.</p>
             
@@ -281,13 +276,13 @@
 
         <a href="https://github.com/art2324/learning-journey" class="action-button showcase-button no-print" target="_blank">Showcase</a>
         
-        <section>
+        <section class="pdf-optimized">
             <h2>About Me</h2>
             <p>I am a Computer Science student passionate about Artificial Intelligence, Data Science, and Secure Systems. Currently, I work alongside my father building compliance-oriented AI platforms, integrating DevSecOps practices with AI Governance frameworks such as ISO/IEC 42001 and the EU AI Act.</p>
             <p>I enjoy turning theory into real-world solutions, from coding ML pipelines to experimenting with Computer Vision and LLMs.</p>
         </section>
         
-        <section>
+        <section class="pdf-optimized">
             <h2>Skills & Interests</h2>
             <div class="skills-grid">
                 <div class="skill-category">
@@ -330,7 +325,7 @@
             </div>
         </section>
         
-        <section>
+        <section class="pdf-optimized">
             <h2>Featured Project</h2>
             <div class="project-highlight">
                 <h3>🛡 AI Governance and Compliance Platform</h3>
@@ -345,7 +340,7 @@
             </div>
         </section>
         
-        <section>
+        <section class="pdf-optimized">
             <h2>Current Learning Journey</h2>
             <div class="learning-journey">
                 <ul class="learning-list">
@@ -356,18 +351,18 @@
             </div>
         </section>
         
-        <section>
+        <section class="pdf-optimized">
             <h2>Let's Connect</h2>
             <div class="contact-info">
-                <div class="contact-item">GitHub: <a href="https://github.com/art2324" class="contact-link" target="_blank">@art2324</a></div>
-                <div class="contact-item">LinkedIn: <a href="https://www.linkedin.com/in/artur-a-everton-434bb237b/" class="contact-link" target="_blank">Artur Everton</a></div>
+                <div class="contact-item">GitHub: <a href="https://github.com/art2324" class="contact-link">@art2324</a></div>
+                <div class="contact-item">LinkedIn: <a href="https://www.linkedin.com/in/artur-a-everton-434bb237b/" class="contact-link">Artur Everton</a></div>
                 <div class="contact-item">Email: <a href="mailto:arturaragao686@gmail.com" class="contact-link">arturaragao686@gmail.com</a></div>
             </div>
         </section>
 
         <button class="action-button pdf-button no-print" onclick="generatePDF()">Download as PDF</button>
         
-        <footer>
+        <footer class="pdf-optimized">
             <p>⭐ Always curious. Always building. Always learning.</p>
         </footer>
     </div>
@@ -376,32 +371,56 @@
         function generatePDF() {
             const element = document.getElementById('resume-content');
             
-            // Clone the element to avoid modifying the original
-            const clonedElement = element.cloneNode(true);
+            // Create a clean copy for PDF generation
+            const elementCopy = element.cloneNode(true);
             
-            // Remove buttons from the cloned element
-            const buttons = clonedElement.querySelectorAll('.no-print');
+            // Remove buttons from the copy
+            const buttons = elementCopy.querySelectorAll('.no-print');
             buttons.forEach(button => button.remove());
             
-            // PDF options
+            // Remove target="_blank" from links for PDF
+            const links = elementCopy.querySelectorAll('a');
+            links.forEach(link => {
+                link.removeAttribute('target');
+                link.removeAttribute('onclick');
+            });
+            
+            // Optimize PDF settings
             const options = {
-                margin: 10,
+                margin: [10, 10, 10, 10],
                 filename: 'Artur_Everton_Resume.pdf',
-                image: { type: 'jpeg', quality: 0.98 },
+                image: { 
+                    type: 'jpeg', 
+                    quality: 0.98 
+                },
                 html2canvas: { 
                     scale: 2,
                     useCORS: true,
-                    logging: true
+                    scrollY: 0,
+                    windowWidth: element.scrollWidth,
+                    windowHeight: element.scrollHeight
                 },
                 jsPDF: { 
                     unit: 'mm', 
                     format: 'a4', 
                     orientation: 'portrait' 
+                },
+                pagebreak: { 
+                    mode: ['avoid-all', 'css', 'legacy'] 
                 }
             };
             
-            // Generate PDF from the cleaned element
-            html2pdf().set(options).from(clonedElement).save();
+            // Show loading indicator
+            const originalText = event.target.textContent;
+            event.target.textContent = 'Generating PDF...';
+            event.target.disabled = true;
+            
+            // Generate PDF
+            html2pdf().set(options).from(elementCopy).save().then(() => {
+                // Restore button text
+                event.target.textContent = originalText;
+                event.target.disabled = false;
+            });
         }
     </script>
 </body>

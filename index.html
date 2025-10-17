@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Artur Everton - Resume</title>
+    <title>Seu Nome - Currículo</title>
     <style>
         * {
             margin: 0;
@@ -131,58 +131,38 @@
             font-weight: bold;
         }
         
-        .project-highlight {
+        .experience-item {
             background-color: #f8f9fa;
             padding: 25px;
             border-radius: 8px;
             border-left: 4px solid #e74c3c;
+            margin-bottom: 20px;
         }
         
-        .project-highlight h3 {
+        .experience-item h3 {
             margin-bottom: 15px;
             color: #2c3e50;
             font-size: 1.4rem;
         }
         
-        .project-link {
-            display: inline-block;
-            margin-top: 15px;
-            color: #3498db;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.1rem;
+        .experience-date {
+            color: #7f8c8d;
+            font-style: italic;
+            margin-bottom: 10px;
         }
         
-        .learning-journey {
+        .education-item {
             background-color: #f8f9fa;
             padding: 25px;
             border-radius: 8px;
             border-left: 4px solid #2ecc71;
+            margin-bottom: 20px;
         }
         
-        .learning-journey h3 {
+        .education-item h3 {
             margin-bottom: 15px;
             color: #2c3e50;
             font-size: 1.4rem;
-        }
-        
-        .learning-list {
-            list-style-type: none;
-        }
-        
-        .learning-list li {
-            margin-bottom: 12px;
-            padding-left: 20px;
-            position: relative;
-            font-size: 1.1rem;
-        }
-        
-        .learning-list li:before {
-            content: "→";
-            color: #2ecc71;
-            position: absolute;
-            left: 0;
-            font-weight: bold;
         }
         
         .contact-info {
@@ -221,12 +201,12 @@
             font-size: 1.1rem;
         }
         
-        .showcase-button {
+        .portfolio-button {
             background-color: #3498db;
             margin-bottom: 30px;
         }
         
-        .showcase-button:hover {
+        .portfolio-button:hover {
             background-color: #2980b9;
         }
         
@@ -261,6 +241,11 @@
             .skills-grid {
                 grid-template-columns: 1fr;
             }
+            
+            .profile-info {
+                flex-direction: column;
+                align-items: center;
+            }
         }
 
         /* Estilos para impressão */
@@ -287,106 +272,123 @@
 <body>
     <div class="container" id="resume-content">
         <header>
-            <h1>Artur Everton (art2324)</h1>
-            <p class="tagline">⭐ Always curious. Always building. Always learning.</p>
+            <h1>Seu Nome Completo</h1>
+            <p class="tagline">Sua frase de impacto ou área de atuação</p>
             
             <div class="profile-info">
-                <div class="info-item">🎓 Computer Science Student @ University of the People</div>
-                <div class="info-item">📊 Data Science & AI Labs @ WorldQuant University</div>
-                <div class="info-item">🤖 AI Enthusiast — ML, LLMs, and Computer Vision</div>
-                <div class="info-item">🛡 Hands-on Contributor in AI Governance & DevSecOps</div>
+                <div class="info-item">🎓 Sua Formação Principal</div>
+                <div class="info-item">💼 Sua Área de Especialização</div>
+                <div class="info-item">🚀 Suas Habilidades Principais</div>
+                <div class="info-item">📍 Sua Localização</div>
             </div>
         </header>
 
-        <a href="https://github.com/art2324/learning-journey" class="action-button showcase-button no-print" target="_blank">Showcase</a>
+        <a href="#" class="action-button portfolio-button no-print" target="_blank">Portfólio</a>
         
         <section>
-            <h2>About Me</h2>
-            <p>I am a Computer Science student passionate about Artificial Intelligence, Data Science, and Secure Systems. Currently, I work alongside my father building compliance-oriented AI platforms, integrating DevSecOps practices with AI Governance frameworks such as ISO/IEC 42001 and the EU AI Act.</p>
-            <p>I enjoy turning theory into real-world solutions, from coding ML pipelines to experimenting with Computer Vision and LLMs.</p>
+            <h2>Sobre Mim</h2>
+            <p>Sou um profissional dedicado e apaixonado pela minha área de atuação. Com experiência em [suas áreas de experiência], busco constantemente me desenvolver e contribuir para projetos desafiadores.</p>
+            <p>Minha abordagem combina [suas principais qualidades] com [suas metodologias ou formas de trabalho], sempre visando a excelência e a entrega de resultados significativos.</p>
         </section>
         
         <section>
-            <h2>Skills & Interests</h2>
+            <h2>Experiência Profissional</h2>
+            
+            <div class="experience-item">
+                <h3>Cargo Mais Recente</h3>
+                <div class="experience-date">Empresa | Período (ex: Jan 2020 - Presente)</div>
+                <ul class="skill-list">
+                    <li>Responsabilidade ou conquista principal</li>
+                    <li>Projeto ou resultado significativo</li>
+                    <li>Habilidade ou tecnologia aplicada</li>
+                </ul>
+            </div>
+            
+            <div class="experience-item">
+                <h3>Cargo Anterior</h3>
+                <div class="experience-date">Empresa | Período (ex: Mar 2018 - Dez 2019)</div>
+                <ul class="skill-list">
+                    <li>Responsabilidade ou conquista principal</li>
+                    <li>Projeto ou resultado significativo</li>
+                    <li>Habilidade ou tecnologia aplicada</li>
+                </ul>
+            </div>
+        </section>
+        
+        <section>
+            <h2>Formação Acadêmica</h2>
+            
+            <div class="education-item">
+                <h3>Curso/Graduação</h3>
+                <div class="experience-date">Instituição de Ensino | Período (ex: 2018-2022)</div>
+                <p>Descrição breve do curso, disciplinas relevantes ou conquistas acadêmicas.</p>
+            </div>
+            
+            <div class="education-item">
+                <h3>Curso/Certificação</h3>
+                <div class="experience-date">Instituição | Período ou Carga Horária</div>
+                <p>Descrição breve do curso e habilidades adquiridas.</p>
+            </div>
+        </section>
+        
+        <section>
+            <h2>Habilidades & Competências</h2>
             <div class="skills-grid">
                 <div class="skill-category">
-                    <h3>Programming</h3>
+                    <h3>Tecnologias & Ferramentas</h3>
                     <ul class="skill-list">
-                        <li>Python</li>
-                        <li>JavaScript</li>
-                        <li>SQL</li>
+                        <li>Linguagem de Programação 1</li>
+                        <li>Linguagem de Programação 2</li>
+                        <li>Ferramenta/Framework 1</li>
+                        <li>Ferramenta/Framework 2</li>
                     </ul>
                 </div>
                 
                 <div class="skill-category">
-                    <h3>AI & Data Science</h3>
+                    <h3>Habilidades Técnicas</h3>
                     <ul class="skill-list">
-                        <li>Pandas, NumPy</li>
-                        <li>Scikit-learn</li>
-                        <li>TensorFlow (basic)</li>
-                        <li>Computer Vision</li>
+                        <li>Habilidade técnica 1</li>
+                        <li>Habilidade técnica 2</li>
+                        <li>Habilidade técnica 3</li>
+                        <li>Habilidade técnica 4</li>
                     </ul>
                 </div>
                 
                 <div class="skill-category">
-                    <h3>DevSecOps & Governance</h3>
+                    <h3>Competências Pessoais</h3>
                     <ul class="skill-list">
-                        <li>Security pipelines</li>
-                        <li>Risk management</li>
-                        <li>AI compliance</li>
+                        <li>Trabalho em equipe</li>
+                        <li>Comunicação</li>
+                        <li>Resolução de problemas</li>
+                        <li>Gestão de tempo</li>
                     </ul>
                 </div>
                 
                 <div class="skill-category">
-                    <h3>Tools</h3>
+                    <h3>Idiomas</h3>
                     <ul class="skill-list">
-                        <li>Git & GitHub</li>
-                        <li>Docker</li>
-                        <li>Jupyter Notebook</li>
-                        <li>Streamlit</li>
+                        <li>Português - Nativo</li>
+                        <li>Inglês - Nível</li>
+                        <li>Espanhol - Nível</li>
                     </ul>
                 </div>
             </div>
         </section>
         
         <section>
-            <h2>Featured Project</h2>
-            <div class="project-highlight">
-                <h3>🛡 AI Governance and Compliance Platform</h3>
-                <p>Contributing developer in a real-world project that offers:</p>
-                <ul class="skill-list">
-                    <li>Automated risk management for AI/ML pipelines</li>
-                    <li>DevSecOps security checks integrated into CI/CD</li>
-                    <li>Governance by design: explainability, auditability, and compliance with ISO/IEC 42001, AI Act, and GDPR/LGPD</li>
-                    <li>Modules for LLM security, monitoring, and evaluation</li>
-                </ul>
-            </div>
-        </section>
-        
-        <section>
-            <h2>Current Learning Journey</h2>
-            <div class="learning-journey">
-                <ul class="learning-list">
-                    <li>University of the People → Computer Science</li>
-                    <li>WorldQuant University → Applied Data Science Lab & Applied AI Lab (Computer Vision)</li>
-                    <li>Self-learning → LLMs, Secure AI deployment, Cloud environments</li>
-                </ul>
-            </div>
-        </section>
-        
-        <section>
-            <h2>Let's Connect</h2>
+            <h2>Contato</h2>
             <div class="contact-info">
-                <div class="contact-item">GitHub: <a href="https://github.com/art2324" class="contact-link">@art2324</a></div>
-                <div class="contact-item">LinkedIn: <a href="https://www.linkedin.com/in/artur-a-everton-434bb237b/" class="contact-link">Artur Everton</a></div>
-                <div class="contact-item">Email: <a href="mailto:arturaragao686@gmail.com" class="contact-link">arturaragao686@gmail.com</a></div>
+                <div class="contact-item">Telefone: <a href="tel:+5511999999999" class="contact-link">(11) 99999-9999</a></div>
+                <div class="contact-item">Email: <a href="mailto:seuemail@exemplo.com" class="contact-link">seuemail@exemplo.com</a></div>
+                <div class="contact-item">LinkedIn: <a href="#" class="contact-link">seu perfil</a></div>
+                <div class="contact-item">GitHub: <a href="#" class="contact-link">seu usuário</a></div>
             </div>
         </section>
 
-        <button class="action-button pdf-button no-print" onclick="printResume()">Download as PDF</button>
+        <button class="action-button pdf-button no-print" onclick="printResume()">Baixar como PDF</button>
         
         <footer>
-            <p>⭐ Always curious. Always building. Always learning.</p>
+            <p>Atualizado em <span id="current-date"></span></p>
         </footer>
     </div>
 
@@ -394,6 +396,9 @@
         function printResume() {
             window.print();
         }
+        
+        // Adiciona a data atual no footer
+        document.getElementById('current-date').textContent = new Date().toLocaleDateString('pt-BR');
     </script>
 </body>
 </html>

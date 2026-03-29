@@ -139,9 +139,20 @@
         }
         
         .project-highlight h3 {
-            margin-bottom: 15px;
+            margin-bottom: 5px;
             color: #2c3e50;
             font-size: 1.4rem;
+        }
+
+        .cert-badge {
+            display: inline-block;
+            background-color: #4285F4;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            margin-bottom: 10px;
         }
         
         .project-link {
@@ -221,15 +232,6 @@
             font-size: 1.1rem;
         }
         
-        .showcase-button {
-            background-color: #3498db;
-            margin-bottom: 30px;
-        }
-        
-        .showcase-button:hover {
-            background-color: #2980b9;
-        }
-        
         .pdf-button {
             background-color: #e74c3c;
             margin-top: 30px;
@@ -237,10 +239,6 @@
         
         .pdf-button:hover {
             background-color: #c0392b;
-        }
-        
-        .no-print {
-            /* Elementos que não devem aparecer na impressão */
         }
         
         footer {
@@ -263,7 +261,6 @@
             }
         }
 
-        /* Estilos para impressão */
         @media print {
             body {
                 background: white !important;
@@ -304,6 +301,16 @@
         </section>
 
         <section>
+            <h2>Certificações Profissionais</h2>
+            <div class="project-highlight" style="border-left: 4px solid #4285F4;">
+                <span class="cert-badge">Google Cloud</span>
+                <h3>☁️ Google Cloud Foundations</h3>
+                <p>Certificação abrangendo fundamentos de infraestrutura, IA e computação em nuvem do Google.</p>
+                <a href="https://www.skills.google/public_profiles/238f1fb8-7bdf-472e-be85-2aa66db8159b" class="project-link" target="_blank">Verificar Credencial Oficial →</a>
+            </div>
+        </section>
+
+        <section>
             <h2>Conquistas e Prêmios</h2>
             
             <div class="project-highlight">
@@ -312,16 +319,14 @@
                 <ul class="skill-list">
                     <li>A competição foca na resolução avançada de problemas em álgebra, geometria e raciocínio lógico</li>
                     <li>Reconhecida por universidades brasileiras líderes como Unicamp e UFABC em seus processos de admissão</li>
-                    <li>Demonstrou habilidades analíticas excepcionais e perseverança ao enfrentar desafios intelectuais complexos</li>
                 </ul>
             </div>
 
             <div class="project-highlight" style="margin-top: 20px; border-left: 4px solid #f39c12;">
                 <h3>📊 OBMAP 2025 - Classificado para a 2ª Fase</h3>
-                <p>Classificado para a <strong>Segunda Fase</strong> da Olimpíada Brasileira de Matemática Aplicada, uma competição que avalia a capacidade de aplicar conceitos matemáticos em problemas práticos e do mundo real. A segunda fase acontecerá no dia 25 de outubro.</p>
+                <p>Classificado para a <strong>Segunda Fase</strong> da Olimpíada Brasileira de Matemática Aplicada. A segunda fase acontecerá no dia 25 de outubro.</p>
                 <ul class="skill-list">
-                    <li>Competição focada na aplicação prática da matemática em contextos reais e interdisciplinares</li>
-                    <li>Reconhecimento nacional da habilidade em resolver problemas complexos usando raciocínio matemático</li>
+                    <li>Foco na aplicação prática da matemática em contextos reais e interdisciplinares</li>
                     <li>Demonstra aptidão para modelagem matemática e pensamento analítico aplicado</li>
                 </ul>
             </div>
@@ -344,7 +349,6 @@
                     <ul class="skill-list">
                         <li>Pandas, NumPy</li>
                         <li>Scikit-learn</li>
-                        <li>TensorFlow (básico)</li>
                         <li>Visão Computacional</li>
                     </ul>
                 </div>
@@ -353,36 +357,17 @@
                     <h3>DevSecOps & Governança</h3>
                     <ul class="skill-list">
                         <li>Pipelines de segurança</li>
-                        <li>Gerenciamento de riscos</li>
                         <li>Conformidade de IA</li>
-                    </ul>
-                </div>
-                
-                <div class="skill-category">
-                    <h3>Ferramentas</h3>
-                    <ul class="skill-list">
-                        <li>Git & GitHub</li>
-                        <li>Docker</li>
-                        <li>Jupyter Notebook</li>
-                        <li>Streamlit</li>
+                        <li>ISO/IEC 42001 (Estudos)</li>
                     </ul>
                 </div>
                 
                 <div class="skill-category">
                     <h3>Ferramentas de Produtividade</h3>
                     <ul class="skill-list">
-                        <li>Pacote Microsoft Office</li>
-                        <li>Windows</li>
-                        <li>Excel</li>
-                        <li>Word</li>
-                        <li>Ferramentas Google (Google Workspace)</li>
-                    </ul>
-                </div>
-                
-                <div class="skill-category">
-                    <h3>Idiomas</h3>
-                    <ul class="skill-list">
-                        <li>Inglês avançado</li>
+                        <li>Pacote Microsoft Office (Excel Avançado)</li>
+                        <li>Google Workspace</li>
+                        <li>Windows Administration</li>
                     </ul>
                 </div>
             </div>
@@ -395,20 +380,7 @@
                 <p>Desenvolvedor contribuidor em um projeto do mundo real que oferece:</p>
                 <ul class="skill-list">
                     <li>Gerenciamento automatizado de riscos para pipelines de IA/ML</li>
-                    <li>Verificações de segurança DevSecOps integradas no CI/CD</li>
-                    <li>Governança por design: explicabilidade, auditabilidade e conformidade com ISO/IEC 42001, AI Act e GDPR/LGPD</li>
-                    <li>Módulos para segurança, monitoramento e avaliação de LLMs</li>
-                </ul>
-            </div>
-        </section>
-        
-        <section>
-            <h2>Jornada de Aprendizado Atual</h2>
-            <div class="learning-journey">
-                <ul class="learning-list">
-                    <li>Ensino Médio → Estudante do 1º Ano</li>
-                    <li>WorldQuant University → Applied Data Science Lab & Applied AI Lab (Visão Computacional)</li>
-                    <li>Autoaprendizado → LLMs, Implantação segura de IA, Ambientes de nuvem</li>
+                    <li>Governança por design e auditabilidade (AI Act e LGPD)</li>
                 </ul>
             </div>
         </section>
